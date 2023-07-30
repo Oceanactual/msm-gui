@@ -7,6 +7,35 @@
 </a>
 
 <hr>
+<form action="/update_director/<%= @the_director.id%>" method="post">
+  <div>
+  <label for="name">Name</label>
+  <input id="name" type="Text" name="the_name" value="<%= @the_director.name %>">
+  </div>
+  <div>
+  <label for="dob">Dob</label>
+  <input id="dob" type="Text" name="the_dob" value="<%= @the_director.dob %>">
+  </div>
+  <div>
+  <label for="bio">Bio</label>
+  <input id="bio" type="Text" name="the_bio" value="<%= @the_director.bio %>">
+  </div>
+  <div>
+  <label for="image">Image</label>
+  <input id="image" type="Text" name="the_image" value="<%= @the_director.image %>">
+  </div>
+  <div>
+    <button>
+      Update director
+    </button>
+  </div>
+</form>
+<hr>
+
+<div>
+  <a href="/delete_director/<%=@the_director.id%>">Delete director</a>
+</div>
+<hr>
 
 <dl>
   <dt>

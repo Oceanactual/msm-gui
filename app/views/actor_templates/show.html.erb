@@ -7,6 +7,35 @@
 </a>
 
 <hr>
+<form action="/update_actor/<%= @the_actor.id%>" method="post">
+  <div>
+  <label for="name">Name</label>
+  <input id="name" type="Text" name="the_name" value="<%= @the_actor.name %>">
+  </div>
+  <div>
+  <label for="dob">Dob</label>
+  <input id="dob" type="Text" name="the_dob" value="<%= @the_actor.dob %>">
+  </div>
+  <div>
+  <label for="bio">Bio</label>
+  <input id="bio" type="Text" name="the_bio" value="<%= @the_actor.bio %>">
+  </div>
+  <div>
+  <label for="image">Image</label>
+  <input id="image" type="Text" name="the_image" value="<%= @the_actor.image %>">
+  </div>
+  <div>
+    <button>
+      Update actor
+    </button>
+  </div>
+</form>
+<hr>
+
+<div>
+  <a href="/delete_actor/<%=@the_actor.id%>">Delete actor</a>
+</div>
+<hr>
 
 <dl>
   <dt>

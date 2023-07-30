@@ -7,6 +7,42 @@
 </a>
 
 <hr>
+<form action="/update_movie_record/<%= @the_movie.id%>" method="post">
+  <div>
+  <label for="title">Title</label>
+  <input id="title" type="Text" name="the_title" value="<%= @the_movie.title %>">
+  </div>
+  <div>
+  <label for="year">Year</label>
+  <input id="year" type="Text" name="the_year" value="<%= @the_movie.year %>">
+  </div>
+  <div>
+  <label for="duration">Duration</label>
+  <input id="duration" type="Text" name="the_duration" value="<%= @the_movie.duration %>">
+  </div>
+  <div>
+  <label for="description">Description</label>
+  <input id="description" type="Text" name="the_description" value="<%= @the_movie.description %>">
+  </div>
+  <div>
+  <label for="image">Image</label>
+  <input id="image" type="Text" name="the_image" value="<%= @the_movie.image %>">
+  </div>
+  <div>
+  <label for="director_id">Director ID</label>
+  <input id="director_id" type="Text" name="the_director_id" value="<%= @the_movie.director_id %>">
+  </div>
+  <div>
+    <button>
+      Update movie
+    </button>
+  </div>
+<hr>
+
+<div>
+  <a href="/delete_movie/<%=@the_movie.id%>">Delete movie</a>
+</div>
+<hr>
 
 <dl>
   <dt>
@@ -54,7 +90,11 @@
     
     <% the_director = matching_directors.at(0) %>
 
-    <%= the_director.name %>
+    <% if the_director == nil%>
+      Uh oh! We weren't able to find a director for this movie.	
+    <% else%>
+          <%= the_director.name %>
+    <%end%>
   </dd>
 
   <dt>
